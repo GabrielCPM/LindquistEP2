@@ -49,4 +49,4 @@ def calcula_pontos_regra_simples (lista_dados):
     # for dado in lista_dados:
     #     if dado in lista_dados:
     #         dPontos[dado] += 1
-    #         return dPontos
+        return dPontos
