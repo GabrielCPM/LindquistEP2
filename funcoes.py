@@ -32,21 +32,21 @@ def remover_dado (dados_rolados, dados_guardados,dado_remover):
 
 def calcula_pontos_regra_simples (lista_dados):
     dPontos = {}
-    for i in range (len(lista_dados)):
-        if lista_dados[i] == 1:
-            dPontos[i] += 1
-        if lista_dados[i] == 2:
-            dPontos[i] += 1
-        if lista_dados[i] == 3:
-            dPontos[i] += 1
-        if lista_dados[i] == 4:
-            dPontos[i] += 1
-        if lista_dados[i] == 5:
-            dPontos[i] += 1
-        if lista_dados[i] == 6:
-            dPontos[i] += 1 
+    # for i in range (len(lista_dados)):
+    #     if lista_dados[i] == 1:
+    #         dPontos[i] += 1
+    #     if lista_dados[i] == 2:
+    #         dPontos[i] += 1
+    #     if lista_dados[i] == 3:
+    #         dPontos[i] += 1
+    #     if lista_dados[i] == 4:
+    #         dPontos[i] += 1
+    #     if lista_dados[i] == 5:
+    #         dPontos[i] += 1
+    #     if lista_dados[i] == 6:
+    #         dPontos[i] += 1 
     
-    # for dado in lista_dados:
-    #     if dado in lista_dados:
-    #         dPontos[dado] += 1
-        return dPontos
+    for dado in lista_dados:
+         if dado in lista_dados:
+             dPontos[dado] += 1
+    return dPontos
