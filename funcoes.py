@@ -34,15 +34,19 @@ def calcula_pontos_regra_simples (lista_dados):
     dPontos = {}
     for i in range (len(lista_dados)):
         if lista_dados[i] == 1:
-            dPontos[1] += 1
+            dPontos[i] += 1
         if lista_dados[i] == 2:
-            dPontos[2] += 1
+            dPontos[i] += 1
         if lista_dados[i] == 3:
-            dPontos[3] += 1
+            dPontos[i] += 1
         if lista_dados[i] == 4:
-            dPontos[4] += 1
+            dPontos[i] += 1
         if lista_dados[i] == 5:
-            dPontos[5] += 1
+            dPontos[i] += 1
         if lista_dados[i] == 6:
-            dPontos[6] += 1 
-    return dPontos
+            dPontos[i] += 1 
+    
+    # for dado in lista_dados:
+    #     if dado in lista_dados:
+    #         dPontos[dado] += 1
+    #         return dPontos
