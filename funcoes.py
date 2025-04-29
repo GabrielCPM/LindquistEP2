@@ -16,5 +16,16 @@ def guardar_dado (lista_rodados, lista_guardados, indice):
 
     return lista_ex2
 
+def remover_dado (dados_rolados, dados_guardados,dado_remover):
+    lista_guardados = []
+    lista_final = []
+    for i in range(dados_guardados):
+        if i == dado_remover:
+            dados_rolados.append(dados_guardados[dado_remover])
+        else:
+            lista_guardados.append(dados_guardados)
+    lista_final.append(dados_rolados)
+    lista_final.append(lista_guardados)
 
-    
+
+    return lista_final
