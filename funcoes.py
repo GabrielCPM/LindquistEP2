@@ -58,6 +58,8 @@ def calcula_pontos_sequencia_baixa (lista_dados):
     lista_em_ordem = sorted(lista_dados) #coloca a lista em ordem crescente
     i = 0 #indice
     c = 0 #contador
+    if len(lista_em_ordem) < 4:
+        return 0
     while i < len(lista_em_ordem)-1: #loop que verifica ate o penultimo termo da sequencia em relacao ao ultimo
         if lista_em_ordem[i] < lista_em_ordem[i+1]: #se o termo eh menor que o proximo
             c += 1 
