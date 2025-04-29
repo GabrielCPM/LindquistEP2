@@ -61,10 +61,10 @@ def calcula_pontos_sequencia_baixa (lista_dados):
     if len(lista_em_ordem) < 4:
         return 0
     while i < len(lista_em_ordem)-1: #loop que verifica ate o penultimo termo da sequencia em relacao ao ultimo
-        if lista_em_ordem[i] == lista_em_ordem[i+1]-1: #se o termo eh menor que o proximo
+        if lista_em_ordem[i] == lista_em_ordem[i+1]-1: #se o termo eh um menor que o proximo
             c += 1 
             i += 1
-        elif lista_dados[i] >= lista_em_ordem[i+1]: #se o termo eh igual ou maior ao proximo
+        elif lista_em_ordem[i] == lista_em_ordem[i+1]: #se o termo eh igual ao proximo
             c = 0
             i += 1
         elif lista_em_ordem[i] < lista_em_ordem[i+1]-1: #se o termo seguinte for dois ou mais maior 
