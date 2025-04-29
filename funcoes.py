@@ -64,7 +64,7 @@ def calcula_pontos_sequencia_baixa (lista_dados):
         if lista_em_ordem[i] < lista_em_ordem[i+1]: #se o termo eh menor que o proximo
             c += 1 
             i += 1
-        if lista_dados[i] == lista_em_ordem[i+1]: #se o termo eh igual ao proximo
+        elif lista_dados[i] >= lista_em_ordem[i+1]: #se o termo eh igual ao proximo
             c = 0
             i += 1
         if c == 3: #se c chegar a 3 (sequencia de 4 numeros presente na lista) loop para
