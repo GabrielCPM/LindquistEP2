@@ -19,9 +19,9 @@ def guardar_dado (lista_rodados, lista_guardados, indice):
 def remover_dado (dados_rolados, dados_guardados,dado_remover):
     lista_guardados = []
     lista_final = []
-    for i in range(dados_guardados):
+    for i in range(len(dados_guardados)):
         if i == dado_remover:
-            dados_rolados.append(dados_guardados[dado_remover])
+            dados_rolados.append(dados_guardados[i])
         else:
             lista_guardados.append(dados_guardados[i])
     lista_final.append(dados_rolados)
