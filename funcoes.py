@@ -71,5 +71,3 @@ def calcula_pontos_sequencia_baixa (lista_dados):
         return 15
     else: #se nao existir retorna 0 (so pode ser 3 ou menor que 3 por causa do break no loop)
         return 0
-
-
