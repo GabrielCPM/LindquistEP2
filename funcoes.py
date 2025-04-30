@@ -75,3 +75,25 @@ def calcula_pontos_sequencia_baixa (lista_dados):
         return 15
     else: #se nao existir retorna 0 (so pode ser 3 ou menor que 3 por causa do break no loop)
         return 0
+    
+def calcula_pontos_sequencia_alta (lista_dados):
+    lista_em_ordem = sorted(lista_dados) #coloca a lista em ordem crescente
+    i = 0 #indice
+    c = 0 #contador
+    if len(lista_em_ordem) < 4:
+        return 0
+    while i < len(lista_em_ordem)-1: #loop que verifica ate o penultimo termo da sequencia em relacao ao ultimo
+        if lista_em_ordem[i] == lista_em_ordem[i+1]-1: #se o termo eh um menor que o proximo
+            c += 1 
+            i += 1
+        elif lista_em_ordem[i] == lista_em_ordem[i+1]: #se o termo eh igual ao proximo
+            i += 1
+        elif lista_em_ordem[i] < lista_em_ordem[i+1]-1: #se o termo seguinte for dois ou mais maior 
+            c = 0
+            i += 1
+        if c == 4: #se c chegar a 3 (sequencia de 4 numeros presente na lista) loop para
+            break
+    if c == 4: #se c for 3 a sequencia existe e retorna 15 pontos
+        return 30
+    else: #se nao existir retorna 0 (so pode ser 3 ou menor que 3 por causa do break no loop)
+        return 0
