@@ -139,3 +139,10 @@ def calcula_pontos_quadra (lista_dados):
     else:
         resultado = 0
     return resultado
+
+def calcula_pontos_cinco_iguais (lista_dados):
+    lista_ordenada = sorted(lista_dados)
+    if lista_ordenada[0] == lista_ordenada[1] and lista_ordenada[1] == lista_ordenada[2] and lista_ordenada[2] == lista_ordenada[3] and lista_ordenada[3] == lista_ordenada[4]:
+        return 50
+    else:
+        return 0
