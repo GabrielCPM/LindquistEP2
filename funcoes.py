@@ -124,21 +124,63 @@ def calcula_pontos_full_house (lista_dados):
     return resultado
 
 def calcula_pontos_quadra (lista_dados):
-    lista_ordenada = sorted(lista_dados)
-    if lista_ordenada[0] == lista_ordenada[1] and lista_ordenada[1] == lista_ordenada[2] and lista_ordenada[2] == lista_ordenada[3] and lista_ordenada[3] == lista_ordenada[4]:
-        return 0
-    if lista_ordenada[0] == lista_ordenada[1] and lista_ordenada[1] == lista_ordenada[2] and lista_ordenada[2] == lista_ordenada[3]:
-        quadra = True
-    else:
-        if lista_ordenada[1] == lista_ordenada[2] and lista_ordenada[2] == lista_ordenada[3] and lista_ordenada[3] == lista_ordenada[4]:
-            quadra = True
+    i = 0
+    c1 = 0
+    c2 = 0
+    c3 = 0
+    c4 = 0
+    c5 = 0
+    c6 = 0
+    while i < len(lista_dados):
+        if lista_dados[i] == 1:
+            c1 += 1
+            i += 1
         else:
-            quadra = False
-    if quadra == True:
-        resultado = lista_ordenada[0]+lista_ordenada[1]+lista_ordenada[2]+lista_ordenada[3]+lista_ordenada[4]
+            i += 1
+    i = 0
+    while i < len(lista_dados):
+        if lista_dados[i] == 2:
+            c2 += 1
+            i += 1
+        else:
+            i += 1
+    i = 0
+    while i < len(lista_dados):
+        if lista_dados[i] == 3:
+            c3 += 1
+            i += 1
+        else:
+            i += 1
+    i = 0
+    while i < len(lista_dados):
+        if lista_dados[i] == 4:
+            c4 += 1
+            i += 1
+        else:
+            i += 1
+    i = 0
+    while i < len(lista_dados):
+        if lista_dados[i] == 5:
+            c5 += 1
+            i += 1
+        else:
+            i += 1
+    i = 0
+    while i < len(lista_dados):
+        if lista_dados[i] == 6:
+            c6 += 1
+            i += 1
+        else:
+            i += 1
+    i = 0
+    soma = 0
+    if c1 >= 4 or c2 >= 4 or c3 >= 4 or c4 >= 4 or c5 >= 4 or c6 >= 4:
+        while i < len(lista_dados):
+            soma += lista_dados[i]
+            i += 1
+        return soma
     else:
-        resultado = 0
-    return resultado
+        return 0
 
 def calcula_pontos_cinco_iguais (lista_dados):
     lista_ordenada = sorted(lista_dados)
