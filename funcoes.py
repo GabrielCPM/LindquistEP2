@@ -100,6 +100,8 @@ def calcula_pontos_sequencia_alta (lista_dados):
     
 def calcula_pontos_full_house (lista_dados):
     lista_ordenada = sorted(lista_dados)
+    if lista_ordenada[0] == lista_ordenada[1] and lista_ordenada[1] == lista_ordenada[2] and lista_ordenada[2] == lista_ordenada[3] and lista_ordenada[3] == lista_ordenada[4]:
+        return 0
     if lista_ordenada[0] == lista_ordenada [1] and lista_ordenada [1] == lista_ordenada[2]:
         trinca = True
         if lista_ordenada[3] == lista_ordenada[4]:
