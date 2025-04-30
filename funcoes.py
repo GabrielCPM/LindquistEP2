@@ -97,3 +97,26 @@ def calcula_pontos_sequencia_alta (lista_dados):
         return 30
     else: #se nao existir retorna 0 (so pode ser 3 ou menor que 3 por causa do break no loop)
         return 0
+    
+def calcula_pontos_full_house (lista_dados):
+    lista_ordenada = sorted(lista_dados)
+    if lista_ordenada[0] == lista_ordenada [1] and lista_ordenada [1] == lista_ordenada[2]:
+        trinca = True
+        if lista_ordenada[3] == lista_ordenada[4]:
+            dupla = True
+        else:
+            dupla = False
+    else:
+        if lista_ordenada[2] == lista_ordenada [3] and lista_ordenada [3] == lista_ordenada[4]:
+            trinca = True
+            if lista_ordenada[0] == lista_ordenada[1]:
+                dupla = True
+            else:
+                dupla = False
+        else:
+            trinca = False
+    if trinca == True and dupla == True:
+        resultado = lista_ordenada[0]+lista_ordenada[1]+lista_ordenada[2]+lista_ordenada[3]+lista_ordenada[4]
+    else:
+        resultado = 0
+    return resultado
