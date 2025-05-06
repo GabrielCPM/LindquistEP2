@@ -235,3 +235,14 @@ def calcula_pontos_quina (lista_dados):
         return 50
     else:
         return 0
+
+def calcula_pontos_regra_avancada (lista_dados):
+    dicio_pontuacoes = {'cinco_iguais': 0, 'full_house': 0, 'quadra': 0, 'sem_combinacao': 0, 'sequencia_alta': 0, 'sequencia_baixa': 0}
+    dicio_pontuacoes['cinco_iguais'] = calcula_pontos_quina(lista_dados)
+    dicio_pontuacoes['full_house'] = calcula_pontos_full_house(lista_dados)
+    dicio_pontuacoes['quadra'] = calcula_pontos_quadra(lista_dados)
+    dicio_pontuacoes['sem_combinacao'] = calcula_pontos_soma(lista_dados)
+    dicio_pontuacoes['sequencia_alta'] = calcula_pontos_sequencia_alta(lista_dados)
+    dicio_pontuacoes['sequencia_baixa'] = calcula_pontos_sequencia_baixa(lista_dados)
+    return dicio_pontuacoes
+
