@@ -246,41 +246,11 @@ def calcula_pontos_regra_avancada (lista_dados):
     dicio_pontuacoes['sequencia_baixa'] = calcula_pontos_sequencia_baixa(lista_dados)
     return dicio_pontuacoes
 
-def faz_jogada (lista_dados, categoria, cartelas):
-    if categoria == 'cinco_iguais':
-        for cartela_avancada in cartelas.values():
-            cartela_avancada['cinco_iguais'] = calcula_pontos_regra_avancada(lista_dados)
-    if categoria == 'full_house':
-        for cartela_avancada in cartelas.values():
-            cartela_avancada['full_house'] = calcula_pontos_regra_avancada(lista_dados)
-    if categoria == 'quadra':
-        for cartela_avancada in cartelas.values():
-            cartela_avancada['quadra'] = calcula_pontos_regra_avancada(lista_dados)
-    if categoria == 'sequencia_baixa':
-        for cartela_avancada in cartelas.values():
-            cartela_avancada['sequencia_baixa'] = calcula_pontos_regra_avancada(lista_dados)
-    if categoria == 'sequencia_alta':
-        for cartela_avancada in cartelas.values():
-            cartela_avancada['sequencia_alta'] = calcula_pontos_regra_avancada(lista_dados)
-    if categoria == 'sem_combinacao':
-        for cartela_avancada in cartelas.values():
-            cartela_avancada['sem_combinacao'] = calcula_pontos_regra_avancada(lista_dados)
-    if categoria == '1':
-        for cartela_simples in cartelas.keys():
-            cartela_simples[1] = calcula_pontos_regra_simples(lista_dados)
-    if categoria == '2':
-        for cartela_simples in cartelas.keys():
-            cartela_simples[2] = calcula_pontos_regra_simples(lista_dados)
-    if categoria == '3':
-        for cartela_simples in cartelas.keys():
-            cartela_simples[3] = calcula_pontos_regra_simples(lista_dados)
-    if categoria == '4':
-        for cartela_simples in cartelas.keys():
-            cartela_simples[4] = calcula_pontos_regra_simples(lista_dados)
-    if categoria == '5':
-        for cartela_simples in cartelas.keys():
-            cartela_simples[5] = calcula_pontos_regra_simples(lista_dados)
-    if categoria == '6':
-        for cartela_simples in cartelas.keys():
-            cartela_simples[6] = calcula_pontos_regra_simples(lista_dados)
-    return cartelas
+def faz_jogada(lista_dados, categoria, cartela_de_pontos):
+    if categoria in ['1', '2', '3', '4', '5', '6']:
+        pontos_simples = calcula_pontos_regra_simples(lista_dados)
+        cartela_de_pontos['regra_simples'][int(categoria)] = pontos_simples[int(categoria)]
+    elif categoria in ['sem_combinacao', 'quadra', 'full_house', 'sequencia_baixa', 'sequencia_alta', 'cinco_iguais']:
+        pontos_avancados = calcula_pontos_regra_avancada(lista_dados)
+        cartela_de_pontos['regra_avancada'][categoria] = pontos_avancados[categoria]
+    return cartela_de_pontos
